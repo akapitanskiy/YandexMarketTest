@@ -12,7 +12,7 @@ public class psvm {
     /*public static void main(String[] args) {
 
         String product = "Телевизоры";
-        String[] dbRequest = JDBCExample.sqlRequest(product);
+        String[] dbRequest = DbConnection.takeProductPropertiesSqlRequest(product);
 
         List<String> brands = BddSteps.takeBrands(dbRequest);
 

@@ -1,7 +1,7 @@
 package yandexTest5.at;
 
 import org.jbehave.core.annotations.When;
-import ru.aplana.kapitanskiyYandexTest.helpers.JDBCExample;
+import ru.aplana.kapitanskiyYandexTest.helpers.DbConnection;
 import ru.aplana.kapitanskiyYandexTest.steps.bdd.BddSteps;
 import java.util.List;
 import static org.junit.Assert.assertTrue;
@@ -10,10 +10,10 @@ import static org.junit.Assert.assertTrue;
  * Created by AKapitanskiy on 17.10.2016 17:34.
  */
 
-public class TvtestbddSteps extends BddSteps {
+public class TvSteps extends BddSteps {
 
     private final String product = "Телевизоры";
-    String[] dbRequest = JDBCExample.sqlRequest(product);
+    String[] dbRequest = DbConnection.takeProductPropertiesSqlRequest(product);
     List<String> brands = takeBrands(dbRequest);
 
     @When("переход в расширенный поиск Телевизоры")

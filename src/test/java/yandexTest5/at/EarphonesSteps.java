@@ -1,7 +1,7 @@
 package yandexTest5.at;
 
 import org.jbehave.core.annotations.When;
-import ru.aplana.kapitanskiyYandexTest.helpers.JDBCExample;
+import ru.aplana.kapitanskiyYandexTest.helpers.DbConnection;
 import ru.aplana.kapitanskiyYandexTest.steps.bdd.BddSteps;
 import java.util.List;
 import static org.junit.Assert.assertTrue;
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
 public class EarphonesSteps extends BddSteps {
 
     private final String product = "Наушники";
-    String[] dbRequest = JDBCExample.sqlRequest(product);
+    String[] dbRequest = DbConnection.takeProductPropertiesSqlRequest(product);
     List<String> brands = takeBrands(dbRequest);
 
 
@@ -58,7 +58,7 @@ public class EarphonesSteps extends BddSteps {
         user.searchAdvancedSteps.inputToHeaderSearch( titleMap.get("firstElementTitle") );
     }
 
-    @When("берём найденный элемент и сравниваем два элемента на равенство")
+    @When("берём найденный элемент и сравниваем c запомненным")
     public void checkFoundElementBdd() throws InterruptedException {
         assertTrue( "Элементы не эквивалентны", user.searchAdvancedSteps.checkFoundElement( titleMap.get("firstElementTitle") ) );
     }

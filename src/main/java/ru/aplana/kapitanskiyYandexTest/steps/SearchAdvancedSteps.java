@@ -63,7 +63,6 @@ public class SearchAdvancedSteps extends ScenarioSteps {
     @Step
     public String takeFirstElement() {
         String s = onSearchAdvPage().firstElement.getText();
-        //titleMap1.put("firstElementTitle", s);
         return s;
     }
 
@@ -99,6 +98,4 @@ public class SearchAdvancedSteps extends ScenarioSteps {
         inputToHeaderSearch(searchStr);
         checkFoundElement(checkStr);
     }*/
-
-
 }

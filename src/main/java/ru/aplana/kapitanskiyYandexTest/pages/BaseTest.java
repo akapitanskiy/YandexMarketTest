@@ -29,43 +29,14 @@ public class BaseTest {
     @Steps
     public UserSteps user;
 
-    /*public static WebDriver getDriver() {
-        return driver;
-    }*/
-
     @Before
     public void openYandexMainPage() {
         user.navigateTo(baseUrl);
         user.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @BeforeClass
-    public static void setUp() {
-        //driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        //String workingDir = System.getProperty("user.dir");
-        //System.setProperty("webdriver.chrome.driver", workingDir + "\\drivers\\chromedriver.exe");
-        //System.setProperty("webdriver.gecko.driver", workingDir + "\\drivers\\geckodriver.exe");
-        //System.setProperty("webdriver.chrome.driver", "/home/rb/Downloads/chromedriver");
-        //driver = new FirefoxDriver();
-        //baseUrl = "https://www.yandex.ru/";
-        //driver.setImplicitTimeout(5, SECONDS);
-        //driver.manage().window().maximize();
-        //System.out.println("++++++++++++++++++++++++++++++++++++++before");
-    }
-
-    /*public YandexMainPage navigate(String url) {
-        return new YandexMainPage();
-    }*/
-
     @AfterClass
     public static void tearDown() throws Exception {
         Thread.sleep(6000);
-        //driver.quit();
-        //System.out.println("++++++++++++++++++++++++++++++++++++++after");
-        /*String verificationErrorString = verificationErrors.toString();
-        if (!"".equals(verificationErrorString)) {
-            fail(verificationErrorString);
-        }*/
     }
-
 }

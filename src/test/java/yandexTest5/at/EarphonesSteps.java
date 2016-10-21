@@ -16,7 +16,6 @@ public class EarphonesSteps extends BddSteps {
     String[] dbRequest = DbConnection.takeProductPropertiesSqlRequest(product);
     List<String> brands = takeBrands(dbRequest);
 
-
     @When("переход в расширенный поиск Наушники")
     public void navigateToEarphonesAdvanced() {
         user.electronicSteps.clickEarphonesLink();
